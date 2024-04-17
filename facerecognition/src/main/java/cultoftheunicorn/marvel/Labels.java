@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
 
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class Labels {
 		try {
 			File f=new File (mPath+"faces.txt");
 			f.createNewFile();
-			BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+			BufferedWriter bw = Files.newBufferedWriter(f.toPath());
 			Iterator<label> Ilabel = thelist.iterator();
 			while (Ilabel.hasNext()) {
 				label l = Ilabel.next();
