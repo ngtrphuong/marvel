@@ -258,7 +258,7 @@ public class Training extends AppCompatActivity implements CameraBridgeViewBase.
 
         Rect[] facesArray = faces.toArray();
 
-        if ((facesArray.length==1)&&(faceState==TRAINING)&&(countImages<MAXIMG)&&(!text.equals("")))
+        if ((facesArray.length==1)&&(faceState==TRAINING)&&(countImages<MAXIMG)&&(!"".equals(text)))
         {
 
 
