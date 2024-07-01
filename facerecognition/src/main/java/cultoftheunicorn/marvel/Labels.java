@@ -1,5 +1,6 @@
 package cultoftheunicorn.marvel;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -98,7 +99,7 @@ public class Labels {
 			String strLine;
 			thelist= new ArrayList<label>();
 			// Read File Line By Line
-			while ((strLine = br.readLine()) != null) {
+			while ((strLine = BoundedLineReader.readLine(br, 5_000_000)) != null) {
 				StringTokenizer tokens=new StringTokenizer(strLine,",");
 				String s=tokens.nextToken();
 				String sn=tokens.nextToken();
